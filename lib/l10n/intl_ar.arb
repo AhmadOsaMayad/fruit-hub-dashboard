@@ -1,0 +1,12 @@
+{
+    "@@locale": "ar",
+    "addData": "إضافة بيانات",
+    "addProduct": "إضافة منتج",
+    "addProductTitle": "إضافة منتج جديد",
+    "pleaseFillThisField": "يرجى ملء هذا الحقل.",
+    "productName": "اسم المنتج",
+    "productPrice": "سعر المنتج",
+    "productDescription": "وصف المنتج",
+    "productQuantity": "كمية المنتج",
+    "productCode": "رمز المنتج"  
+}
