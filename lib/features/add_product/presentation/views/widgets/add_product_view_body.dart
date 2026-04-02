@@ -55,7 +55,7 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
               SizedBox(height: 16),
               CustomTextFormField(
                 hintText: S.of(context).productCode,
-                keyboardType: TextInputType.number,
+                keyboardType: TextInputType.text,
                 onSaved: (value) {
                   productCode = value!.toLowerCase();
                 },

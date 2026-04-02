@@ -5,7 +5,7 @@ import 'package:fruithub_dashboard/core/repos/products_repo/products_repo.dart';
 import 'package:fruithub_dashboard/core/services/get_it_service.dart';
 import 'package:fruithub_dashboard/core/widgets/custom_app_bar.dart';
 import 'package:fruithub_dashboard/features/add_product/presentation/manager/add_product_cubit/add_product_cubit.dart';
-import 'package:fruithub_dashboard/features/add_product/presentation/views/widgets/add_product_view_body.dart';
+import 'package:fruithub_dashboard/features/add_product/presentation/views/widgets/add_product_view_body_consumer.dart';
 import 'package:fruithub_dashboard/generated/l10n.dart';
 
 class AddProductsView extends StatelessWidget {
@@ -20,7 +20,7 @@ class AddProductsView extends StatelessWidget {
           productsRepo: getIt.get<ProductsRepo>(),
           imagesRepo: getIt.get<ImagesRepo>(),
         ),
-        child: AddProductViewBody(),
+        child: AddProductViewBodyConsumer(),
       ),
     );
   }
