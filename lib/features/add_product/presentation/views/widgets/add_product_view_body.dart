@@ -1,10 +1,12 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruithub_dashboard/core/widgets/custom_button.dart';
 import 'package:fruithub_dashboard/core/widgets/custom_text_form_field.dart';
 import 'package:fruithub_dashboard/core/widgets/is_featured_check_box.dart';
 import 'package:fruithub_dashboard/features/add_product/domain/entities/add_product_entity.dart';
+import 'package:fruithub_dashboard/features/add_product/presentation/manager/add_product_cubit/add_product_cubit.dart';
 import 'package:fruithub_dashboard/features/add_product/presentation/views/widgets/image_field.dart';
 import 'package:fruithub_dashboard/generated/l10n.dart';
 
@@ -95,7 +97,7 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                     if (_formKey.currentState!.validate()) {
                       _formKey.currentState!.save();
                       // Perform the add product action with the collected data
-                      AddProductEntity(
+                      AddProductEntity input = AddProductEntity(
                         image: selectedImage!,
                         imageUrl: null,
                         name: productName,
@@ -103,7 +105,9 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                         description: productDescription,
                         price: productPrice,
                         quantity: quantity,
+                        isFeatured: isFeaturedItem,
                       );
+                      context.read<AddProductCubit>().addProduct(input);
                     } else {
                       autovalidateMode = AutovalidateMode.always;
                       setState(() {});
