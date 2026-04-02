@@ -26,9 +26,23 @@ class MessageLookup extends MessageLookupByLibrary {
     "addProduct": MessageLookupByLibrary.simpleMessage("إضافة منتج"),
     "addProductTitle": MessageLookupByLibrary.simpleMessage("إضافة منتج جديد"),
     "assignAs": MessageLookupByLibrary.simpleMessage("تعيينه كـ "),
+    "averageRating": MessageLookupByLibrary.simpleMessage("التقييم المتوسط"),
+    "caloriesPer100g": MessageLookupByLibrary.simpleMessage(
+      "السعرات الحرارية لكل 100 جرام",
+    ),
+    "expDate": MessageLookupByLibrary.simpleMessage("تاريخ الانتهاء"),
     "featuredProduct": MessageLookupByLibrary.simpleMessage("منتج مميز"),
+    "invalidDateFormat": MessageLookupByLibrary.simpleMessage(
+      "تنسيق تاريخ غير صالح. يرجى استخدام يوم/شهر/سنة.",
+    ),
+    "invalidSelectedDate": MessageLookupByLibrary.simpleMessage(
+      "يجب أن يكون التاريخ أكثر من 3 أشهر من اليوم",
+    ),
     "pleaseFillThisField": MessageLookupByLibrary.simpleMessage(
       "يرجى ملء هذا الحقل.",
+    ),
+    "pleaseSelectADate": MessageLookupByLibrary.simpleMessage(
+      "يرجى اختيار تاريخ",
     ),
     "pleaseSelectAnImage": MessageLookupByLibrary.simpleMessage(
       "يرجى اختيار صورة",
@@ -38,5 +52,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "productName": MessageLookupByLibrary.simpleMessage("اسم المنتج"),
     "productPrice": MessageLookupByLibrary.simpleMessage("سعر المنتج"),
     "productQuantity": MessageLookupByLibrary.simpleMessage("كمية المنتج"),
+    "reviews": MessageLookupByLibrary.simpleMessage("المراجعات"),
   };
 }

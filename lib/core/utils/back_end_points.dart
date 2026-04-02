@@ -16,4 +16,8 @@ class DKWords {
   static const quantity = 'quantity';
   static const isFeatured = 'is_featured';
   static const imageUrl = 'image_url';
+  static const expMonths = 'exp_date';
+  static const calPer100g = 'cal_per_100g';
+  static const avgRating = 'avg_rating';
+  static const avgCount = 'avg_count';
 }

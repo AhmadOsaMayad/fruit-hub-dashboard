@@ -163,6 +163,66 @@ class S {
       args: [],
     );
   }
+
+  /// `Expiration Date`
+  String get expDate {
+    return Intl.message('Expiration Date', name: 'expDate', desc: '', args: []);
+  }
+
+  /// `Date must be more than 3 months from today`
+  String get invalidSelectedDate {
+    return Intl.message(
+      'Date must be more than 3 months from today',
+      name: 'invalidSelectedDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid date format. Please use dd/MM/yyyy.`
+  String get invalidDateFormat {
+    return Intl.message(
+      'Invalid date format. Please use dd/MM/yyyy.',
+      name: 'invalidDateFormat',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select a date`
+  String get pleaseSelectADate {
+    return Intl.message(
+      'Please select a date',
+      name: 'pleaseSelectADate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Calories per 100g`
+  String get caloriesPer100g {
+    return Intl.message(
+      'Calories per 100g',
+      name: 'caloriesPer100g',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Average Rating`
+  String get averageRating {
+    return Intl.message(
+      'Average Rating',
+      name: 'averageRating',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reviews`
+  String get reviews {
+    return Intl.message('Reviews', name: 'reviews', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

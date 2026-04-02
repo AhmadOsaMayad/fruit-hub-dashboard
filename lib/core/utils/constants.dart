@@ -3,6 +3,7 @@ const kIsOnBoardingSeen = 'isOnBoardingSeen';
 const kUserData = 'userData';
 const kWeakPasswordK = 'weak-password';
 const kWeakPasswordV = 'The password provided is too weak.';
+const kDefDateFormat = 'yyyy-MM-dd';
 
 const kEmailAlreadyInUseK = 'email-already-in-use';
 const kEmailAlreadyInUseV = 'The account already exists for that email.';

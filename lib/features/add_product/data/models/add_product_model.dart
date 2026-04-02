@@ -12,6 +12,10 @@ class AddProductModel {
   final int quantity;
   final bool isFeatured;
   String? imageUrl;
+  final String expDate;
+  final num calPer100g;
+  final num avgRating;
+  final int avgCount;
 
   AddProductModel({
     required this.image,
@@ -22,6 +26,10 @@ class AddProductModel {
     required this.isFeatured,
     this.quantity = 1,
     this.imageUrl,
+    required this.expDate,
+    this.calPer100g = 0,
+    this.avgRating = 0,
+    this.avgCount = 0,
   });
 
   factory AddProductModel.fromEntity(AddProductEntity entity) {
@@ -34,6 +42,10 @@ class AddProductModel {
       isFeatured: entity.isFeatured,
       quantity: entity.quantity,
       imageUrl: entity.imageUrl,
+      expDate: entity.expDate,
+      calPer100g: entity.calPer100g,
+      avgRating: entity.avgRating,
+      avgCount: entity.avgCount,
     );
   }
 
@@ -46,6 +58,10 @@ class AddProductModel {
       DKWords.quantity: quantity,
       DKWords.isFeatured: isFeatured,
       DKWords.imageUrl: imageUrl,
+      DKWords.expMonths: expDate,
+      DKWords.calPer100g: calPer100g,
+      DKWords.avgRating: avgRating,
+      DKWords.avgCount: avgCount,
     };
   }
 }

@@ -26,9 +26,23 @@ class MessageLookup extends MessageLookupByLibrary {
     "addProduct": MessageLookupByLibrary.simpleMessage("Add Product"),
     "addProductTitle": MessageLookupByLibrary.simpleMessage("Add New Product"),
     "assignAs": MessageLookupByLibrary.simpleMessage("Assign it as a "),
+    "averageRating": MessageLookupByLibrary.simpleMessage("Average Rating"),
+    "caloriesPer100g": MessageLookupByLibrary.simpleMessage(
+      "Calories per 100g",
+    ),
+    "expDate": MessageLookupByLibrary.simpleMessage("Expiration Date"),
     "featuredProduct": MessageLookupByLibrary.simpleMessage("Featured Product"),
+    "invalidDateFormat": MessageLookupByLibrary.simpleMessage(
+      "Invalid date format. Please use dd/MM/yyyy.",
+    ),
+    "invalidSelectedDate": MessageLookupByLibrary.simpleMessage(
+      "Date must be more than 3 months from today",
+    ),
     "pleaseFillThisField": MessageLookupByLibrary.simpleMessage(
       "Please fill this field.",
+    ),
+    "pleaseSelectADate": MessageLookupByLibrary.simpleMessage(
+      "Please select a date",
     ),
     "pleaseSelectAnImage": MessageLookupByLibrary.simpleMessage(
       "Please select an image",
@@ -40,5 +54,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "productName": MessageLookupByLibrary.simpleMessage("Product Name"),
     "productPrice": MessageLookupByLibrary.simpleMessage("Product Price"),
     "productQuantity": MessageLookupByLibrary.simpleMessage("Product Quantity"),
+    "reviews": MessageLookupByLibrary.simpleMessage("Reviews"),
   };
 }

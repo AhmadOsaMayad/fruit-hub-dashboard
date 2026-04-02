@@ -11,5 +11,12 @@
     "productCode": "رمز المنتج",
     "assignAs": "تعيينه كـ ",
     "featuredProduct": "منتج مميز",
-    "pleaseSelectAnImage": "يرجى اختيار صورة"
+    "pleaseSelectAnImage": "يرجى اختيار صورة",
+    "expDate": "تاريخ الانتهاء",
+    "invalidSelectedDate": "يجب أن يكون التاريخ أكثر من 3 أشهر من اليوم",
+    "invalidDateFormat": "تنسيق تاريخ غير صالح. يرجى استخدام يوم/شهر/سنة.",
+    "pleaseSelectADate": "يرجى اختيار تاريخ",
+    "caloriesPer100g": "السعرات الحرارية لكل 100 جرام",
+    "averageRating": "التقييم المتوسط",
+    "reviews": "المراجعات"
 }

@@ -4,11 +4,15 @@ import 'package:fruithub_dashboard/generated/l10n.dart';
 
 class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField({
+    this.validator,
+    this.controller,
     this.onSaved,
+    this.onTap,
     this.suffixIcon,
     this.hintText,
     this.keyboardType,
     this.obscure = false,
+    this.readOnly = false,
     this.maxLines = 1,
     super.key,
   });
@@ -16,21 +20,30 @@ class CustomTextFormField extends StatelessWidget {
   final TextInputType? keyboardType;
   final Widget? suffixIcon;
   final void Function(String?)? onSaved;
-  final bool obscure;
+  final bool obscure, readOnly;
   final int maxLines;
+  final String? Function(String?)? validator;
+  final void Function()? onTap;
+  final TextEditingController? controller;
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
+      onTap: onTap,
+      readOnly: readOnly,
       obscuringCharacter: '•',
       obscureText: obscure,
       maxLines: maxLines,
       onSaved: onSaved,
-      validator: (value) {
-        if (value == null || value.isEmpty) {
-          return S.of(context).pleaseFillThisField;
-        }
-        return null;
-      },
+      validator:
+          validator ??
+          (value) {
+            if (value == null || value.isEmpty) {
+              return S.of(context).pleaseFillThisField;
+            }
+            return null;
+          },
       keyboardType: keyboardType,
       decoration: InputDecoration(
         suffixIcon: suffixIcon,

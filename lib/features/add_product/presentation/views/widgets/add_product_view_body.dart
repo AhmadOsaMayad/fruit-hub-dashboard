@@ -2,8 +2,10 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruithub_dashboard/core/helpers/dp_helper.dart';
 import 'package:fruithub_dashboard/core/widgets/custom_button.dart';
 import 'package:fruithub_dashboard/core/widgets/custom_text_form_field.dart';
+import 'package:fruithub_dashboard/core/widgets/date_picker_text_field.dart';
 import 'package:fruithub_dashboard/core/widgets/is_featured_check_box.dart';
 import 'package:fruithub_dashboard/features/add_product/domain/entities/add_product_entity.dart';
 import 'package:fruithub_dashboard/features/add_product/presentation/manager/add_product_cubit/add_product_cubit.dart';
@@ -20,11 +22,27 @@ class AddProductViewBody extends StatefulWidget {
 class _AddProductViewBodyState extends State<AddProductViewBody> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+  late TextEditingController? dpController;
   bool isFeaturedItem = false;
   File? selectedImage;
   late String productName, productCode, productDescription;
-  late num productPrice;
-  int quantity = 1;
+  String? expDate;
+  late num productPrice, calPer100g;
+  int quantity = 1, avgCount = 0;
+  num avgRating = 0;
+
+  @override
+  initState() {
+    super.initState();
+    dpController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    dpController?.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -61,11 +79,59 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                 },
               ),
               SizedBox(height: 16),
-              CustomTextFormField(
-                hintText: S.of(context).productQuantity,
-                keyboardType: TextInputType.number,
-                onSaved: (value) {
-                  quantity = int.parse(value!);
+              // Row(children: [],),
+              Row(
+                children: [
+                  Expanded(
+                    child: CustomTextFormField(
+                      hintText: S.of(context).productQuantity,
+                      keyboardType: TextInputType.number,
+                      onSaved: (value) {
+                        quantity = int.parse(value!);
+                      },
+                    ),
+                  ),
+                  SizedBox(width: 16),
+                  Expanded(
+                    child: CustomTextFormField(
+                      hintText: S.of(context).caloriesPer100g,
+                      keyboardType: TextInputType.number,
+                      onSaved: (value) {
+                        calPer100g = num.parse(value!);
+                      },
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 16),
+              Row(
+                children: [
+                  Expanded(
+                    child: CustomTextFormField(
+                      hintText: S.of(context).reviews,
+                      keyboardType: TextInputType.number,
+                      onSaved: (value) {
+                        avgCount = int.parse(value!);
+                      },
+                    ),
+                  ),
+                  SizedBox(width: 16),
+                  Expanded(
+                    child: CustomTextFormField(
+                      hintText: S.of(context).averageRating,
+                      keyboardType: TextInputType.number,
+                      onSaved: (value) {
+                        avgRating = num.parse(value!);
+                      },
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 16),
+              DatePickerTextField(
+                controller: dpController!,
+                onDateSelected: (date) {
+                  expDate = DpHelper.date2str(date);
                 },
               ),
               SizedBox(height: 16),
@@ -106,6 +172,10 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                         price: productPrice,
                         quantity: quantity,
                         isFeatured: isFeaturedItem,
+                        expDate: expDate!,
+                        calPer100g: calPer100g,
+                        avgRating: avgRating,
+                        avgCount: avgCount,
                       );
                       context.read<AddProductCubit>().addProduct(input);
                     } else {

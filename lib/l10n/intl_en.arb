@@ -11,5 +11,12 @@
     "productCode": "Product Code",
     "assignAs": "Assign it as a ",
     "featuredProduct": "Featured Product",
-    "pleaseSelectAnImage": "Please select an image"
+    "pleaseSelectAnImage": "Please select an image",
+    "expDate": "Expiration Date",
+    "invalidSelectedDate": "Date must be more than 3 months from today",
+    "invalidDateFormat": "Invalid date format. Please use dd/MM/yyyy.",
+    "pleaseSelectADate": "Please select a date",
+    "caloriesPer100g": "Calories per 100g",
+    "averageRating": "Average Rating",
+    "reviews": "Reviews"
 }
