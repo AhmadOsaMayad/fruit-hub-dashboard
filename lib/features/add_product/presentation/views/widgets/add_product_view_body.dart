@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:fruithub_dashboard/core/widgets/custom_button.dart';
 import 'package:fruithub_dashboard/core/widgets/custom_text_form_field.dart';
 import 'package:fruithub_dashboard/core/widgets/is_featured_check_box.dart';
+import 'package:fruithub_dashboard/features/add_product/domain/entities/add_product_entity.dart';
 import 'package:fruithub_dashboard/features/add_product/presentation/views/widgets/image_field.dart';
 import 'package:fruithub_dashboard/generated/l10n.dart';
 
@@ -15,7 +16,7 @@ class AddProductViewBody extends StatefulWidget {
 }
 
 class _AddProductViewBodyState extends State<AddProductViewBody> {
-  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   bool isFeaturedItem = false;
   File? selectedImage;
@@ -29,7 +30,7 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
       child: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Form(
-          key: formKey,
+          key: _formKey,
           autovalidateMode: autovalidateMode,
           child: Column(
             children: [
@@ -91,9 +92,18 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                 text: S.of(context).addProduct,
                 onPressed: () {
                   if (selectedImage != null) {
-                    if (formKey.currentState!.validate()) {
-                      formKey.currentState!.save();
+                    if (_formKey.currentState!.validate()) {
+                      _formKey.currentState!.save();
                       // Perform the add product action with the collected data
+                      AddProductEntity(
+                        image: selectedImage!,
+                        imageUrl: null,
+                        name: productName,
+                        code: productCode,
+                        description: productDescription,
+                        price: productPrice,
+                        quantity: quantity,
+                      );
                     } else {
                       autovalidateMode = AutovalidateMode.always;
                       setState(() {});
