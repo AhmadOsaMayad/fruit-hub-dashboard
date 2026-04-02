@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:fruithub_dashboard/core/errors/exceptions.dart';
 import 'package:fruithub_dashboard/core/services/storage_service.dart';
 import 'package:path/path.dart' as b;
 
@@ -18,7 +19,9 @@ class FireStorage implements StorageService {
       final downloadUrl = await snapshot.ref.getDownloadURL();
       return downloadUrl;
     } on FirebaseException catch (e) {
-      throw Exception('Failed to upload image: $e');
+      throw CustomExceptions(
+        message: e.message ?? 'Failed to upload image: $e',
+      );
     }
   }
 }

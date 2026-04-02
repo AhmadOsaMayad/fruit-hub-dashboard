@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:fruithub_dashboard/core/helpers/on_generate_routes.dart';
+import 'package:fruithub_dashboard/core/services/get_it_service.dart';
 import 'package:fruithub_dashboard/features/dashboard/presentation/views/dashboard_view.dart';
 import 'package:fruithub_dashboard/generated/l10n.dart';
 
 void main() {
+  setupGetIt();
   runApp(const MainApp());
 }
 
