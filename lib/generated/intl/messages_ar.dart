@@ -25,8 +25,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "addData": MessageLookupByLibrary.simpleMessage("إضافة بيانات"),
     "addProduct": MessageLookupByLibrary.simpleMessage("إضافة منتج"),
     "addProductTitle": MessageLookupByLibrary.simpleMessage("إضافة منتج جديد"),
+    "assignAs": MessageLookupByLibrary.simpleMessage("تعيينه كـ "),
+    "featuredProduct": MessageLookupByLibrary.simpleMessage("منتج مميز"),
     "pleaseFillThisField": MessageLookupByLibrary.simpleMessage(
       "يرجى ملء هذا الحقل.",
+    ),
+    "pleaseSelectAnImage": MessageLookupByLibrary.simpleMessage(
+      "يرجى اختيار صورة",
     ),
     "productCode": MessageLookupByLibrary.simpleMessage("رمز المنتج"),
     "productDescription": MessageLookupByLibrary.simpleMessage("وصف المنتج"),

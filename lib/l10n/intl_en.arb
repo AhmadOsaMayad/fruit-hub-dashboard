@@ -8,5 +8,8 @@
     "productPrice": "Product Price",
     "productDescription": "Product Description",
     "productQuantity": "Product Quantity",
-    "productCode": "Product Code"
+    "productCode": "Product Code",
+    "assignAs": "Assign it as a ",
+    "featuredProduct": "Featured Product",
+    "pleaseSelectAnImage": "Please select an image"
 }

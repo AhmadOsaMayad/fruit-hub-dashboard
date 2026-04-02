@@ -133,6 +133,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Assign it as a `
+  String get assignAs {
+    return Intl.message(
+      'Assign it as a ',
+      name: 'assignAs',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Featured Product`
+  String get featuredProduct {
+    return Intl.message(
+      'Featured Product',
+      name: 'featuredProduct',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select an image`
+  String get pleaseSelectAnImage {
+    return Intl.message(
+      'Please select an image',
+      name: 'pleaseSelectAnImage',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

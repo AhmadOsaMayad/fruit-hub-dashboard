@@ -25,8 +25,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "addData": MessageLookupByLibrary.simpleMessage("Add Data"),
     "addProduct": MessageLookupByLibrary.simpleMessage("Add Product"),
     "addProductTitle": MessageLookupByLibrary.simpleMessage("Add New Product"),
+    "assignAs": MessageLookupByLibrary.simpleMessage("Assign it as a "),
+    "featuredProduct": MessageLookupByLibrary.simpleMessage("Featured Product"),
     "pleaseFillThisField": MessageLookupByLibrary.simpleMessage(
       "Please fill this field.",
+    ),
+    "pleaseSelectAnImage": MessageLookupByLibrary.simpleMessage(
+      "Please select an image",
     ),
     "productCode": MessageLookupByLibrary.simpleMessage("Product Code"),
     "productDescription": MessageLookupByLibrary.simpleMessage(

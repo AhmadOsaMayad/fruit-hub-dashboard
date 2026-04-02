@@ -8,5 +8,8 @@
     "productPrice": "سعر المنتج",
     "productDescription": "وصف المنتج",
     "productQuantity": "كمية المنتج",
-    "productCode": "رمز المنتج"  
+    "productCode": "رمز المنتج",
+    "assignAs": "تعيينه كـ ",
+    "featuredProduct": "منتج مميز",
+    "pleaseSelectAnImage": "يرجى اختيار صورة"
 }
