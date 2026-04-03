@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:fruithub_dashboard/features/add_product/domain/entities/review_entity.dart';
+
 class AddProductEntity {
   final File image;
   final String name;
@@ -13,6 +15,7 @@ class AddProductEntity {
   final num calPer100g;
   final num avgRating;
   final int avgCount;
+  final List<ReviewEntity> reviews;
   // final bool isOrganic;
   // final num orgPercentage;
 
@@ -29,5 +32,6 @@ class AddProductEntity {
     this.calPer100g = 0,
     this.avgRating = 0,
     this.avgCount = 0,
+    required this.reviews,
   });
 }

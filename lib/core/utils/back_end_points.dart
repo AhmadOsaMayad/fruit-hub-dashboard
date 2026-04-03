@@ -20,4 +20,10 @@ class DKWords {
   static const calPer100g = 'cal_per_100g';
   static const avgRating = 'avg_rating';
   static const avgCount = 'avg_count';
+  static const revName = 'reviewer_name';
+  static const revImage = 'reviewer_image';
+  static const revDesc = 'reviewer_description';
+  static const revRating = 'reviewer_rating';
+  static const revDate = 'reviewer_date';
+  static const reviews = 'reviews';
 }

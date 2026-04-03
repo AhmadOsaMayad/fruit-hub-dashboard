@@ -31,7 +31,7 @@ class MainApp extends StatelessWidget {
       onGenerateRoute: onGenerateRoutes,
       debugShowCheckedModeBanner: false,
       // title: 'Fruit Hub',
-      locale: const Locale('ar'),
+      locale: const Locale('en'),
       localizationsDelegates: [
         S.delegate,
         GlobalMaterialLocalizations.delegate,

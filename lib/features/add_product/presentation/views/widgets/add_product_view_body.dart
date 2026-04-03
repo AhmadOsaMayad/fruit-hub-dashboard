@@ -79,7 +79,6 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                 },
               ),
               SizedBox(height: 16),
-              // Row(children: [],),
               Row(
                 children: [
                   Expanded(
@@ -176,6 +175,16 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                         calPer100g: calPer100g,
                         avgRating: avgRating,
                         avgCount: avgCount,
+                        reviews: [
+                          // ReviewEntity(
+                          //   name: 'Ahmad Ousama',
+                          //   image:
+                          //       'https://firebasestorage.googleapis.com/v0/b/fruit-hub-134cc.firebasestorage.app/o/images%2F437d41ba75e59232c85898c17602697f.jpg..jpg?alt=media&token=2fd37869-32cc-4ab5-bd02-f711d6399470',
+                          //   description: 'Great product!',
+                          //   rating: 4.5,
+                          //   date: '2026-04-01',
+                          // ),
+                        ],
                       );
                       context.read<AddProductCubit>().addProduct(input);
                     } else {

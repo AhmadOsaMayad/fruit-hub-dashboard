@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruithub_dashboard/core/utils/app_colors.dart';
 import 'package:fruithub_dashboard/core/utils/app_text_styles.dart';
 import 'package:fruithub_dashboard/generated/l10n.dart';
 
@@ -29,6 +30,7 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      cursorColor: AppColors.primary,
       controller: controller,
       onTap: onTap,
       readOnly: readOnly,

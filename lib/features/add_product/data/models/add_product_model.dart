@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:fruithub_dashboard/core/utils/back_end_points.dart';
+import 'package:fruithub_dashboard/features/add_product/data/models/review_model.dart';
 import 'package:fruithub_dashboard/features/add_product/domain/entities/add_product_entity.dart';
 
 class AddProductModel {
@@ -16,6 +17,7 @@ class AddProductModel {
   final num calPer100g;
   final num avgRating;
   final int avgCount;
+  final List<ReviewModel> reviews;
 
   AddProductModel({
     required this.image,
@@ -30,6 +32,7 @@ class AddProductModel {
     this.calPer100g = 0,
     this.avgRating = 0,
     this.avgCount = 0,
+    required this.reviews,
   });
 
   factory AddProductModel.fromEntity(AddProductEntity entity) {
@@ -46,6 +49,9 @@ class AddProductModel {
       calPer100g: entity.calPer100g,
       avgRating: entity.avgRating,
       avgCount: entity.avgCount,
+      reviews: entity.reviews
+          .map((review) => ReviewModel.fromEntity(review))
+          .toList(),
     );
   }
 
@@ -62,6 +68,7 @@ class AddProductModel {
       DKWords.calPer100g: calPer100g,
       DKWords.avgRating: avgRating,
       DKWords.avgCount: avgCount,
+      DKWords.reviews: reviews.map((review) => review.toJson()).toList(),
     };
   }
 }
