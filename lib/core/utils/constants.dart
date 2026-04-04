@@ -8,9 +8,9 @@ const kWeakPasswordV = 'The password provided is too weak.';
 const kDefDateFormat = 'yyyy-MM-dd';
 const kSupabaseAnonKey = 'sb_publishable_Qkd4Eux_5Epg0tTm5ijBZw_XIK4VQxn';
 const kSupabaseUrl = 'https://cryphuqlipxsfrhjxvlk.supabase.co';
+final kSupabaseKey = dotenv.env['SUPABASE_KEY'];
 const kEmailAlreadyInUseK = 'email-already-in-use';
 const kEmailAlreadyInUseV = 'The account already exists for that email.';
-final kSupabaseKey = dotenv.env['SUPABASE_KEY'];
 
 const kInvalidEmailK = 'invalid-email';
 const kInvalidEmailV = 'The email address is badly formatted';

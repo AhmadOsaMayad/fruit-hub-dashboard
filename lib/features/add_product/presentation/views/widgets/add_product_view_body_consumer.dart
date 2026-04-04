@@ -21,7 +21,7 @@ class AddProductViewBodyConsumer extends StatelessWidget {
       builder: (context, state) {
         return CustomLoadingIndicator(
           isLoading: state is AddProductLoading,
-          child: AddProductViewBody(),
+          child: const AddProductViewBody(),
         );
       },
     );

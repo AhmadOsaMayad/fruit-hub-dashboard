@@ -17,9 +17,6 @@ void main() async {
   await dotenv.load(fileName: ".env");
 
   await SupabaseStorageService.supabaseInit();
-  // if (!(await SupabaseStorageService.isBucketExists('fruits_images'))) {
-  //   await SupabaseStorageService.createBucket('fruits_images');
-  // }
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   setupGetIt();
   runApp(const MainApp());
@@ -40,7 +37,7 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       // title: 'Fruit Hub',
       locale: const Locale('en'),
-      localizationsDelegates: [
+      localizationsDelegates: const [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,

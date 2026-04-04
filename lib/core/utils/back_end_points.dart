@@ -9,7 +9,7 @@ class BackEndPoints {
   // static const email = 'email';
 }
 
-class DKWords {
+class QKWords {
   static const name = 'name';
   static const code = 'code';
   static const description = 'description';
@@ -27,4 +27,5 @@ class DKWords {
   static const revRating = 'reviewer_rating';
   static const revDate = 'reviewer_date';
   static const reviews = 'reviews';
+  static const sellingCount = 'selling_count';
 }

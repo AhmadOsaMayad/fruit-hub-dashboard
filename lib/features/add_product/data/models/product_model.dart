@@ -2,9 +2,9 @@ import 'dart:io';
 
 import 'package:fruithub_dashboard/core/utils/back_end_points.dart';
 import 'package:fruithub_dashboard/features/add_product/data/models/review_model.dart';
-import 'package:fruithub_dashboard/features/add_product/domain/entities/add_product_entity.dart';
+import 'package:fruithub_dashboard/features/add_product/domain/entities/product_entity.dart';
 
-class AddProductModel {
+class ProductModel {
   final File image;
   final String name;
   final String code;
@@ -17,9 +17,10 @@ class AddProductModel {
   final num calPer100g;
   final num avgRating;
   final int avgCount;
+  final int sellingCount;
   final List<ReviewModel> reviews;
 
-  AddProductModel({
+  ProductModel({
     required this.image,
     required this.name,
     required this.code,
@@ -32,11 +33,12 @@ class AddProductModel {
     this.calPer100g = 0,
     this.avgRating = 0,
     this.avgCount = 0,
+    this.sellingCount = 0,
     required this.reviews,
   });
 
-  factory AddProductModel.fromEntity(AddProductEntity entity) {
-    return AddProductModel(
+  factory ProductModel.fromEntity(ProductEntity entity) {
+    return ProductModel(
       image: entity.image,
       name: entity.name,
       code: entity.code,
@@ -49,6 +51,7 @@ class AddProductModel {
       calPer100g: entity.calPer100g,
       avgRating: entity.avgRating,
       avgCount: entity.avgCount,
+      sellingCount: entity.sellingCount,
       reviews: entity.reviews
           .map((review) => ReviewModel.fromEntity(review))
           .toList(),
@@ -57,18 +60,19 @@ class AddProductModel {
 
   Map<String, dynamic> toJson() {
     return {
-      DKWords.name: name,
-      DKWords.code: code,
-      DKWords.description: description,
-      DKWords.price: price,
-      DKWords.quantity: quantity,
-      DKWords.isFeatured: isFeatured,
-      DKWords.imageUrl: imageUrl,
-      DKWords.expMonths: expDate,
-      DKWords.calPer100g: calPer100g,
-      DKWords.avgRating: avgRating,
-      DKWords.avgCount: avgCount,
-      DKWords.reviews: reviews.map((review) => review.toJson()).toList(),
+      QKWords.name: name,
+      QKWords.code: code,
+      QKWords.description: description,
+      QKWords.price: price,
+      QKWords.quantity: quantity,
+      QKWords.isFeatured: isFeatured,
+      QKWords.imageUrl: imageUrl,
+      QKWords.expMonths: expDate,
+      QKWords.calPer100g: calPer100g,
+      QKWords.avgRating: avgRating,
+      QKWords.avgCount: avgCount,
+      QKWords.sellingCount: sellingCount,
+      QKWords.reviews: reviews.map((review) => review.toJson()).toList(),
     };
   }
 }

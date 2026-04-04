@@ -28,21 +28,21 @@ class ReviewModel {
 
   factory ReviewModel.fromJson(Map<String, dynamic> json) {
     return ReviewModel(
-      revName: json[DKWords.revName],
-      revImage: json[DKWords.revImage],
-      revDesc: json[DKWords.revDesc],
-      revRating: json[DKWords.revRating],
-      revDate: json[DKWords.revDate],
+      revName: json[QKWords.revName],
+      revImage: json[QKWords.revImage],
+      revDesc: json[QKWords.revDesc],
+      revRating: json[QKWords.revRating],
+      revDate: json[QKWords.revDate],
     );
   }
 
   Map<String, dynamic> toJson() {
     return {
-      DKWords.revName: revName,
-      DKWords.revImage: revImage,
-      DKWords.revDesc: revDesc,
-      DKWords.revRating: revRating,
-      DKWords.revDate: revDate,
+      QKWords.revName: revName,
+      QKWords.revImage: revImage,
+      QKWords.revDesc: revDesc,
+      QKWords.revRating: revRating,
+      QKWords.revDate: revDate,
     };
   }
 }

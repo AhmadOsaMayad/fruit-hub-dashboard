@@ -7,7 +7,8 @@ import 'package:fruithub_dashboard/core/widgets/custom_button.dart';
 import 'package:fruithub_dashboard/core/widgets/custom_text_form_field.dart';
 import 'package:fruithub_dashboard/core/widgets/date_picker_text_field.dart';
 import 'package:fruithub_dashboard/core/widgets/is_featured_check_box.dart';
-import 'package:fruithub_dashboard/features/add_product/domain/entities/add_product_entity.dart';
+import 'package:fruithub_dashboard/features/add_product/domain/entities/product_entity.dart';
+import 'package:fruithub_dashboard/features/add_product/domain/entities/review_entity.dart';
 import 'package:fruithub_dashboard/features/add_product/presentation/manager/add_product_cubit/add_product_cubit.dart';
 import 'package:fruithub_dashboard/features/add_product/presentation/views/widgets/image_field.dart';
 import 'package:fruithub_dashboard/generated/l10n.dart';
@@ -54,7 +55,7 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
           autovalidateMode: autovalidateMode,
           child: Column(
             children: [
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               CustomTextFormField(
                 hintText: S.of(context).productName,
                 keyboardType: TextInputType.text,
@@ -62,7 +63,7 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                   productName = value!;
                 },
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               CustomTextFormField(
                 hintText: S.of(context).productPrice,
                 keyboardType: TextInputType.number,
@@ -70,7 +71,7 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                   productPrice = num.parse(value!);
                 },
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               CustomTextFormField(
                 hintText: S.of(context).productCode,
                 keyboardType: TextInputType.text,
@@ -78,7 +79,7 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                   productCode = value!.toLowerCase();
                 },
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               Row(
                 children: [
                   Expanded(
@@ -90,7 +91,7 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                       },
                     ),
                   ),
-                  SizedBox(width: 16),
+                  const SizedBox(width: 16),
                   Expanded(
                     child: CustomTextFormField(
                       hintText: S.of(context).caloriesPer100g,
@@ -102,7 +103,7 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                   ),
                 ],
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               Row(
                 children: [
                   Expanded(
@@ -114,7 +115,7 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                       },
                     ),
                   ),
-                  SizedBox(width: 16),
+                  const SizedBox(width: 16),
                   Expanded(
                     child: CustomTextFormField(
                       hintText: S.of(context).averageRating,
@@ -126,14 +127,14 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                   ),
                 ],
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               DatePickerTextField(
                 controller: dpController!,
                 onDateSelected: (date) {
                   expDate = DpHelper.date2str(date);
                 },
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               CustomTextFormField(
                 hintText: S.of(context).productDescription,
                 keyboardType: TextInputType.text,
@@ -142,19 +143,19 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                 },
                 maxLines: 5,
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               ImageField(
                 onImageChanged: (image) {
                   selectedImage = image;
                 },
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               IsFeaturedCheckBox(
                 onChanged: (value) {
                   isFeaturedItem = value;
                 },
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               CustomButton(
                 text: S.of(context).addProduct,
                 onPressed: () {
@@ -162,7 +163,7 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                     if (_formKey.currentState!.validate()) {
                       _formKey.currentState!.save();
                       // Perform the add product action with the collected data
-                      AddProductEntity input = AddProductEntity(
+                      ProductEntity input = ProductEntity(
                         image: selectedImage!,
                         imageUrl: null,
                         name: productName,
@@ -176,14 +177,22 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                         avgRating: avgRating,
                         avgCount: avgCount,
                         reviews: [
-                          // ReviewEntity(
-                          //   name: 'Ahmad Ousama',
-                          //   image:
-                          //       'https://firebasestorage.googleapis.com/v0/b/fruit-hub-134cc.firebasestorage.app/o/images%2F437d41ba75e59232c85898c17602697f.jpg..jpg?alt=media&token=2fd37869-32cc-4ab5-bd02-f711d6399470',
-                          //   description: 'Great product!',
-                          //   rating: 4.5,
-                          //   date: '2026-04-01',
-                          // ),
+                          ReviewEntity(
+                            name: 'Ahmad Ousama',
+                            image:
+                                'https://cryphuqlipxsfrhjxvlk.supabase.co/storage/v1/object/public/fruits_images/images/437d41ba75e59232c85898c17602697f.jpg',
+                            description: 'Great product!',
+                            rating: 4.5,
+                            date: '2026-04-01',
+                          ),
+                          ReviewEntity(
+                            name: 'أحمد أسامة',
+                            image:
+                                'https://cryphuqlipxsfrhjxvlk.supabase.co/storage/v1/object/public/fruits_images/images/437d41ba75e59232c85898c17602697f.jpg',
+                            description: 'منتج خلقة! بس بالعربي',
+                            rating: 4.5,
+                            date: '2026-04-01',
+                          ),
                         ],
                       );
                       context.read<AddProductCubit>().addProduct(input);
@@ -196,7 +205,7 @@ class _AddProductViewBodyState extends State<AddProductViewBody> {
                   }
                 },
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
             ],
           ),
         ),
