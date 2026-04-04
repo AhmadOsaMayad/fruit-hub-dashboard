@@ -1,5 +1,6 @@
 class BackEndPoints {
   static const images = 'images';
+  static const fruitsImages = 'fruits_images';
   static const addUserData = 'users';
   static const getUserData = 'users';
   static const isUserExists = 'users';
