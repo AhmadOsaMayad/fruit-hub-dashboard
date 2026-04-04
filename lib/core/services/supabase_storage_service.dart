@@ -12,7 +12,7 @@ class SupabaseStorageService implements StorageService {
   static Future<void> supabaseInit() async {
     _supabase = await Supabase.initialize(
       url: kSupabaseUrl,
-      anonKey: kSupabasePrivateKey,
+      anonKey: kSupabaseKey!,
     );
     _storage = _supabase.client.storage;
   }

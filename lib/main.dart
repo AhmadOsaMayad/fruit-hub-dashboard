@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:fruithub_dashboard/core/helpers/on_generate_routes.dart';
 import 'package:fruithub_dashboard/core/services/custom_bloc_observer.dart';
@@ -13,6 +14,8 @@ import 'package:fruithub_dashboard/generated/l10n.dart';
 void main() async {
   Bloc.observer = CustomBlocObserver();
   WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: ".env");
+
   await SupabaseStorageService.supabaseInit();
   // if (!(await SupabaseStorageService.isBucketExists('fruits_images'))) {
   //   await SupabaseStorageService.createBucket('fruits_images');
